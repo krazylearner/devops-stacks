@@ -2,18 +2,18 @@
 
 ## Day 1 — Linux + Git refresh
 
-- [ ] `uname -a && lsb_release -a && df -h && free -h && ss -tlnp`
-- [ ] `git config --global user.name/email && ssh-keygen -t ed25519`
-- [ ] `git init /root/dev/devops && echo "# devops" > README.md && git add . && git commit -m "init"`
-- [ ] Practice: `nano/vim, chmod 600, systemctl status, journalctl -xe | head`
+- [x] `uname -a && lsb_release -a && df -h && free -h && ss -tlnp`
+- [x] `git config --global user.name/email && ssh-keygen -t ed25519`
+- [x] `git init /root/dev/devops && echo "# devops" > README.md && git add . && git commit -m "init"`
+- [x] Practice: `nano/vim, chmod 600, systemctl status, journalctl -xe | head`
 
 !!! success "✅ Validation"
-    Can explain file perms + systemd + commit/push. Notes: ___
+    Can explain file perms + systemd + commit/push. Notes: Ubuntu 24.04 noble, SSH ed25519 exists (600), git krazylearner <ankurbansal0562@gmail.com>, main @ 3928b78 init, branch renamed master→main, .gitignore covers .venv/site.
 
 ## Day 2 — Install Docker Engine (official, not snap)
 
-- [ ] `snap list | grep -i docker || echo "no snap docker"`
-- [ ] Install keyring + repo:
+- [x] `snap list | grep -i docker || echo "no snap docker"`
+- [x] Install keyring + repo:
     ```bash
     apt-get update && apt-get install -y ca-certificates curl gnupg
     install -m 0755 -d /etc/apt/keyrings
@@ -22,14 +22,14 @@
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) stable" | tee /etc/apt/sources.list.d/docker.list
     apt-get update && apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
     ```
-- [ ] `docker --version && docker compose version && docker run hello-world && docker run --rm nginx:alpine nginx -v`
+- [x] `docker --version && docker compose version && docker run hello-world && docker run --rm nginx:alpine nginx -v`
 
 !!! success "✅ Validation"
-    Both version cmds + hello-world ok. Notes: ___
+    Both version cmds + hello-world ok. Notes: Docker 29.8.0, Compose v5.5.1, hello-world ok, nginx:alpine 1.31.5 ok (2026-09-12).
 
 ## Day 3 — Install Portainer CE LTS
 
-- [ ] Create `portainer-compose.yaml`:
+- [x] Create `portainer-compose.yaml`:
     ```yaml
     services:
       portainer:
@@ -40,8 +40,8 @@
           - /var/run/docker.sock:/var/run/docker.sock
           - portainer_data:/data
         ports:
-          - 8000:8000
-          - 9443:9443
+          - 127.0.0.1:8000:8000
+          - 127.0.0.1:9443:9443
     volumes:
       portainer_data:
         name: portainer_data
@@ -49,9 +49,9 @@
       default:
         name: portainer_network
     ```
-- [ ] `docker volume create portainer_data && docker compose -f portainer-compose.yaml up -d`
-- [ ] `docker ps | grep portainer && docker logs portainer --tail 20`
-- [ ] Open `https://<IP>:9443` → create admin (12+ chars, <15min or get token via logs) → Home → local → Containers
+- [x] `docker volume create portainer_data && docker compose -f portainer-compose.yaml up -d`
+- [x] `docker ps | grep portainer && docker logs portainer --tail 20`
+- [x] Open `https://<IP>:9443` → create admin (12+ chars, <15min or get token via logs) → Home → local → Containers
 
 !!! success "✅ Validation"
-    Portainer lists its own container. Notes: ___
+    Portainer lists its own container. Notes: 2.45.0 lts, admin krazylearner via API + X-Setup-Token, proxied at https://portainer.aalpha.media via Caddy (trusted TLS), ports localhost-only (125f966).
