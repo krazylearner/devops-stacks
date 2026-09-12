@@ -1,0 +1,49 @@
+site_name: DevOps 90-Day Tracker
+site_description: Beginner to Expert DevOps / Platform Engineer via Portainer
+site_author: you
+repo_url: https://github.com/portainer/portainer
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - scheme: default
+      primary: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+plugins:
+  - search
+markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+extra_javascript:
+  - assets/progress.js
+nav:
+  - Dashboard: index.md
+  - Phase 0 Install (Day 1-3): phase-0-install.md
+  - Phase 1 Docker (Day 4-14): phase-1-docker.md
+  - Phase 2 Homelab (Day 15-32): phase-2-homelab.md
+  - Phase 3 CI/CD (Day 33-52): phase-3-cicd.md
+  - Phase 4 Kubernetes (Day 53-72): phase-4-k8s.md
+  - Phase 5 Platform (Day 73-86): phase-5-platform.md
+  - Phase 6 Expert (Day 87-90): phase-6-expert.md
