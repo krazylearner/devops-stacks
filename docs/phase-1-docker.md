@@ -58,11 +58,11 @@
 
 ## Day 11-12 — Project 1: Versioned site + backup
 
-- [ ] Build `my-site:v1,v2`, deploy v2, rollback to v1 via Portainer
-- [ ] Backup: `docker run --rm -v portainer_data:/src -v $(pwd):/dst alpine tar czf /dst/portainer-backup.tgz /src`
+- [x] Build `my-site:v1,v2`, deploy v2, rollback to v1 via Portainer
+- [x] Backup: `docker run --rm -v portainer_data:/src -v $(pwd):/dst alpine tar czf /dst/portainer-backup.tgz /src`
 
 !!! success "✅ Validation"
-    Rollback <2min, backup.tgz exists. Notes: ___
+    Rollback <2min, backup.tgz exists. Notes: v2 red then v1 blue rollback 3.6s ok on 8083, backup 28K with portainer.db+tls (2026-09-13).
 
 ## Day 13 — Destroy/rebuild drill
 

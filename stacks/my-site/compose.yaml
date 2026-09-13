@@ -1,0 +1,7 @@
+services:
+  site:
+    image: my-site:v1
+    container_name: my-site
+    ports:
+      - 8083:80
+    restart: always
