@@ -43,10 +43,10 @@
 
 ## Day 9 — Compose / Stacks
 
-- [ ] Write `stacks/my-web/compose.yaml` for Day 8, deploy as Portainer Stack, then `docker compose down/up` via CLI
+- [x] Write `stacks/my-web/compose.yaml` for Day 8, deploy as Portainer Stack, then `docker compose down/up` via CLI
 
 !!! success "✅ Validation"
-    Same stack works UI+CLI. Notes: ___
+    Same stack works UI+CLI. Notes: my-web compose down/up twice same hi v1 on 8081, CLI parity ok (Portainer Stack paste same file) (2026-09-13).
 
 ## Day 10 — Registries + Limits + Prune
 

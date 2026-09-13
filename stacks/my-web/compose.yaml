@@ -1,0 +1,7 @@
+services:
+  web:
+    image: my-web:v1
+    container_name: my-web
+    ports:
+      - 8081:80
+    restart: always
