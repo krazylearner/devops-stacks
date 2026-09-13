@@ -2,11 +2,11 @@
 
 ## Day 4 — Containers vs Images
 
-- [ ] UI: Images pull `nginx:alpine` → Containers Add `my-nginx` 8080:80 → browse `http://<IP>:8080`
-- [ ] `docker ps/images/logs my-nginx` + exec `sh` + stop/start/remove in UI
+- [x] UI: Images pull `nginx:alpine` → Containers Add `my-nginx` 8080:80 → browse `http://<IP>:8080`
+- [x] `docker ps/images/logs my-nginx` + exec `sh` + stop/start/remove in UI
 
 !!! success "✅ Validation"
-    Can explain container=image+state. Notes: ___
+    Can explain container=image+state. Notes: nginx:alpine 103MB (Alpine 3.24.1, nginx master+4 workers), my-nginx 8080:80 HTTP 200, stop→Exited→start→Up→rm→run ok, restart=always (2026-09-13).
 
 ## Day 5 — Ports, Env, Restart
 
