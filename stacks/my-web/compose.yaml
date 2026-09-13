@@ -5,3 +5,5 @@ services:
     ports:
       - 8081:80
     restart: always
+    mem_limit: 256m
+    cpus: 0.5

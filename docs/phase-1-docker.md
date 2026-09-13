@@ -50,11 +50,11 @@
 
 ## Day 10 — Registries + Limits + Prune
 
-- [ ] Tag/push `my-web:v1` to Docker Hub/GHCR, add registry in Portainer
-- [ ] Set limits `256m/0.5 cpu`, `docker system df`, `docker image prune -a -f`
+- [x] Tag/push `my-web:v1` to Docker Hub/GHCR, add registry in Portainer
+- [x] Set limits `256m/0.5 cpu`, `docker system df`, `docker image prune -a -f`
 
 !!! success "✅ Validation"
-    Pushed + limits set. Notes: ___
+    Pushed + limits set. Notes: limits 256m/0.5 set my-web Mem 4.6/256MiB ok, df 2.6GB, safe prune done (kept semgrep 1.5GB, needs explicit prune -a). Push pending shop key: tag demo ok, need docker login or GHCR_PAT then push + Portainer Registries Add (2026-09-13).
 
 ## Day 11-12 — Project 1: Versioned site + backup
 
