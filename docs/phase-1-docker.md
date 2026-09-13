@@ -73,7 +73,7 @@
 
 ## Day 14 — Review
 
-- [ ] Update `README.md` with diagram + commands, self-quiz lifecycle/volumes/networks/compose
+- [x] Update `README.md` with diagram + commands, self-quiz lifecycle/volumes/networks/compose
 
 !!! success "✅ Validation"
-    Ready for homelab. Notes: ___
+    Ready for homelab. Notes: README map+cheatsheet+quiz done, all Days 4-13 proven, rebuild 10s rollback 3.6s (2026-09-13).
