@@ -35,11 +35,11 @@
 
 ## Day 8 — Dockerfile build
 
-- [ ] `mkdir app && echo "<h1>hi</h1>" > app/index.html` + `Dockerfile FROM nginx:alpine + COPY`
-- [ ] `docker build -t my-web:v1 ./app && docker run -d -p 8081:80 my-web:v1`
+- [x] `mkdir app && echo "<h1>hi</h1>" > app/index.html` + `Dockerfile FROM nginx:alpine + COPY`
+- [x] `docker build -t my-web:v1 ./app && docker run -d -p 8081:80 my-web:v1`
 
 !!! success "✅ Validation"
-    Custom image runs in Portainer. Notes: ___
+    Custom image runs in Portainer. Notes: my-web:v1 102MB serves hi from my-web v1 on 8081 HTTP 200 (2026-09-13).
 
 ## Day 9 — Compose / Stacks
 
