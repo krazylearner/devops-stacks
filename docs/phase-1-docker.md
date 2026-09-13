@@ -18,12 +18,12 @@
 
 ## Day 6 — Volumes persistence
 
-- [ ] Stack `postgres:16` + volume `pgdata:/var/lib/postgresql/data` + `POSTGRES_PASSWORD=secret`
-- [ ] Exec `psql -U postgres -c "create table t(id int); insert into t values(1);"`
-- [ ] `docker stop + rm` container only → recreate → `select * from t;` still there
+- [x] Stack `postgres:16` + volume `pgdata:/var/lib/postgresql/data` + `POSTGRES_PASSWORD=secret`
+- [x] Exec `psql -U postgres -c "create table t(id int); insert into t values(1);"`
+- [x] `docker stop + rm` container only → recreate → `select * from t;` still there
 
 !!! success "✅ Validation"
-    Explain named vs bind vs anonymous. Notes: ___
+    Explain named vs bind vs anonymous. Notes: pgdata named volume survives rm, select shows 1 after recreate. Named=labeled box pgdata, bind=home bag, anon=nameless plastic (2026-09-13).
 
 ## Day 7 — Networks
 
