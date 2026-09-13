@@ -10,11 +10,11 @@
 
 ## Day 5 — Ports, Env, Restart
 
-- [ ] Run `traefik/whoami` with env `FOO=bar`, restart `always`
-- [ ] Reboot test: `docker restart` → app auto-up
+- [x] Run `traefik/whoami` with env `FOO=bar`, restart `always`
+- [x] Reboot test: `docker restart` → app auto-up
 
 !!! success "✅ Validation"
-    Survives restart. Notes: ___
+    Survives restart. Notes: whoami 8082:80 HTTP 200, Env FOO=bar via inspect (image has no shell so exec env fails, expected), restart=always, restart→Up 3s ok (2026-09-13).
 
 ## Day 6 — Volumes persistence
 

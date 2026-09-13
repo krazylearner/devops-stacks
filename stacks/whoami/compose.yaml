@@ -1,0 +1,9 @@
+services:
+  whoami:
+    image: traefik/whoami:latest
+    container_name: whoami
+    environment:
+      FOO: bar
+    ports:
+      - 8082:80
+    restart: always
