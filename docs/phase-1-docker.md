@@ -66,10 +66,10 @@
 
 ## Day 13 — Destroy/rebuild drill
 
-- [ ] `docker compose down -v` test apps → rebuild only from git, zero manual clicks
+- [x] `docker compose down -v` test apps → rebuild only from git, zero manual clicks
 
 !!! success "✅ Validation"
-    Rebuild <10min. Notes: ___
+    Rebuild <10min. Notes: down -v all toys (pgdata deleted as expected), rebuild from git 10.3s all 200 (8080,8081,8082,8083), front/back re-attached, t=1 re-seeded (2026-09-13).
 
 ## Day 14 — Review
 
