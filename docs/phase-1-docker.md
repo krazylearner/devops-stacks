@@ -27,11 +27,11 @@
 
 ## Day 7 — Networks
 
-- [ ] Create networks `front/back` in Portainer → attach nginx to front, postgres to back, test `ping` via exec
-- [ ] `docker network inspect front`
+- [x] Create networks `front/back` in Portainer → attach nginx to front, postgres to back, test `ping` via exec
+- [x] `docker network inspect front`
 
 !!! success "✅ Validation"
-    Can draw bridge isolation. Notes: ___
+    Can draw bridge isolation. Notes: front has my-nginx 172.21.0.2, back has pg-day6 172.22.0.2, ping fails=good isolation (2026-09-13).
 
 ## Day 8 — Dockerfile build
 
