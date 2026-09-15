@@ -4,9 +4,9 @@ services:
     container_name: whoami
     environment:
       FOO: bar
-      PHASE: day33-git
+      PHASE: day35-webhook
     labels:
-      - devops.phase=day33-git
+      - devops.phase=day35-webhook
     ports:
       - 8082:80
     restart: always
