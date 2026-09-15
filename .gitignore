@@ -3,3 +3,9 @@ site/
 __pycache__/
 *.pyc
 portainer-backup.tgz
+backup-wp-*.sql
+backup-wp-*.tgz
+# Phase 3: secrets — local .env never pushed, only .env.example
+.env
+stacks/*/.env
+*.env

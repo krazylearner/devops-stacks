@@ -1,0 +1,54 @@
+services:
+  db:
+    image: mariadb:11
+    container_name: bs-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${BS_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${BS_DB_NAME:-bookstack}
+      MYSQL_USER: ${BS_DB_USER}
+      MYSQL_PASSWORD: ${BS_DB_PASSWORD}
+    volumes:
+      - bs_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    mem_limit: 512m
+    cpus: 0.5
+
+  app:
+    image: lscr.io/linuxserver/bookstack:latest
+    container_name: bs-web
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - 8087:80
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Etc/UTC
+      APP_URL: ${BS_APP_URL:-http://books.173.249.42.241.nip.io:8085}
+      APP_KEY: ${BS_APP_KEY}
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: ${BS_DB_NAME:-bookstack}
+      DB_USERNAME: ${BS_DB_USER}
+      DB_PASSWORD: ${BS_DB_PASSWORD}
+    volumes:
+      - bs_config:/config
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/login"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    mem_limit: 512m
+    cpus: 1.0
+
+volumes:
+  bs_config:
+  bs_db_data:

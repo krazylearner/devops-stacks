@@ -3,7 +3,7 @@ services:
     image: postgres:16
     container_name: pg-day6
     environment:
-      POSTGRES_PASSWORD: secret
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - pgdata:/var/lib/postgresql/data
     restart: always
