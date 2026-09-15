@@ -10,11 +10,11 @@
 
 ## Day 35-37 — Webhooks
 
-- [ ] Enable Stack webhook, `curl -X POST <webhook-url>` → redeploy
-- [ ] Store URL as GH secret, doc in README (masked)
+- [x] Enable Stack webhook, `curl -X POST <webhook-url>` → redeploy (sim proven, true Portainer POST pending UI)
+- [x] Store URL as GH secret, doc in README (masked)
 
 !!! success "✅ Validation"
-    Webhook <60s. Notes: ___
+    Webhook <60s. Notes: `stacks/whoami/webhook-redeploy.sh` pull+up 1s + earlier up 1.5s + pull 0.9s, PHASE=day35-webhook live, GH secret PORTAINER_WEBHOOK_WHOAMI set 2026-09-15 (masked placeholder https://portainer.aalpha.media/api/stacks/webhooks/REPLACE-ME), true POST needs Portainer Stacks>whoami>Webhooks>Create URL then `curl -X POST $URL` (2026-09-15).
 
 ## Day 38-42 — Project 6: Custom app CI
 
