@@ -18,11 +18,11 @@
 
 ## Day 38-42 — Project 6: Custom app CI
 
-- [ ] Tiny Node/Python app + Dockerfile + `compose.yaml` pinned `:<sha>`
-- [ ] `.github/workflows/build-push-deploy.yaml`: lint → build → push GHCR → curl webhook
+- [x] Tiny Node/Python app + Dockerfile + `compose.yaml` pinned `:<sha>`
+- [x] `.github/workflows/build-push-deploy.yaml`: lint → build → push GHCR → curl webhook
 
 !!! success "✅ Validation"
-    Merge to main = live. Notes: ___
+    Merge to main = live. Notes: stacks/my-app python stdlib :8088, CI 34944910114 success 30s lint+build+push GHCR latest+3ecddb0 digest 6472b1, pull+up Recreated, curl {"app":"my-app","version":"v1","sha":"3ecddb0"} + /healthz ok, pinned TAG=3ecddb0 live (2026-09-15).
 
 ## Day 43-45 — Dev/Prod envs
 
