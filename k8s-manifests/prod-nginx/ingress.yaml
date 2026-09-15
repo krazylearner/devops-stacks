@@ -3,8 +3,14 @@ kind: Ingress
 metadata:
   name: prod-nginx
   namespace: prod-nginx
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   ingressClassName: traefik
+  tls:
+    - hosts:
+        - prod-nginx.k3s.local
+      secretName: local-tls
   rules:
     - host: prod-nginx.k3s.local
       http:

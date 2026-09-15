@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: local-tls
+  namespace: prod-nginx
+spec:
+  secretName: local-tls
+  duration: 24h
+  isCA: false
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS8
+    size: 2048
+  usages:
+    - server auth
+    - client auth
+  dnsNames:
+    - prod-nginx.k3s.local
+  issuerRef:
+    name: selfsigned
+    kind: ClusterIssuer

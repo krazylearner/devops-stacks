@@ -31,11 +31,11 @@
 
 ## Day 67-69 — Storage + TLS
 
-- [ ] `local-path` PVC postgres StatefulSet + `cert-manager + letsencrypt-staging`
-- [ ] Delete pod → data survives
+- [x] `local-path` PVC postgres StatefulSet + `cert-manager + letsencrypt-staging`
+- [x] Delete pod → data survives
 
 !!! success "✅ Validation"
-    PVC + cert ok. Notes: ___
+    PVC + cert ok. Notes: pg StatefulSet pg-0 2Gi local-path PVC, delete pod → row 42 survived (same PV rebound); cert-manager (jetstack chart v1.x, crds.enabled) 3 pods; selfsigned ClusterIssuer issued local-tls (SAN prod-nginx.k3s.local) serving via traefik NodePort :32108 https; letsencrypt-staging issuer created but issuance pending public DNS record for Host (aalpha.media on CF, no token on host) — wire acme once a subdomain is added.
 
 ## Day 70-72 — K8s rebuild drill
 
