@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prod-nginx
+  namespace: prod-nginx
+spec:
+  selector:
+    app: prod-nginx
+  ports:
+    - port: 80
+      targetPort: 80

@@ -17,10 +17,10 @@
 
 ## Day 59-62 — Project 7: Prod-grade nginx
 
-- [ ] Probes, limits `128Mi/250m`, ConfigMap, `kubectl rollout restart/undo` v1→v2
+- [x] Probes, limits `128Mi/250m`, ConfigMap, `kubectl rollout restart/undo` v1→v2
 
 !!! success "✅ Validation"
-    Zero-downtime. Notes: ___
+    Zero-downtime. Notes: `k8s-manifests/prod-nginx/` (conf + html ConfigMaps, probes, 128Mi/250m caps, maxUnavailable=0); v1→v2 via cm+annotation revision, curl never 5xx (mix v1/v2 during roll); `rollout undo` rev3→v1 template; content rollback via cm v2→v1; restart clean. image imported `docker save → k3s ctr images import` (my-web:v1).
 
 ## Day 63-66 — Helm
 

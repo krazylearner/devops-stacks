@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: prod-nginx
+  namespace: prod-nginx
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: prod-nginx.k3s.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prod-nginx
+                port:
+                  number: 80
