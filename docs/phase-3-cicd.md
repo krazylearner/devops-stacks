@@ -2,11 +2,11 @@
 
 ## Day 33-34 — Git-backed Stacks
 
-- [ ] Push `stacks/` to GitHub `devops-stacks`, Portainer Stack → Repository, polling 5m
-- [ ] Push change → auto-redeploy observed
+- [x] Push `stacks/` to GitHub `devops-stacks`, Portainer Stack → Repository, polling 5m
+- [x] Push change → auto-redeploy observed
 
 !!! success "✅ Validation"
-    Push=deploy. Notes: ___
+    Push=deploy. Notes: repo https://github.com/krazylearner/devops-stacks public, f5803ba sanitize + 8193502 drill PHASE=day33-git pushed, fresh clone config OK, `up -d` Recreated whoami with PHASE=day33-git, Portainer UI: Stacks>Add>Repository URL+stacks/whoami/compose.yaml polling 5m + env override (2026-09-15).
 
 ## Day 35-37 — Webhooks
 
