@@ -24,10 +24,10 @@
 
 ## Day 63-66 — Helm
 
-- [ ] Helm `kube-prometheus-stack + grafana` via Portainer, values override, upgrade/rollback
+- [x] Helm `kube-prometheus-stack + grafana` via Portainer, values override, upgrade/rollback
 
 !!! success "✅ Validation"
-    Grafana dashboards. Notes: ___
+    Grafana dashboards. Notes: helm v3.19.2 install `monitoring` ns, chart 91.4.0; values override `k8s-manifests/monitoring/values-day63.yaml` (2h retention first); grafana NodePort :31300 admin/2WQl4fFNUxs1awvelscLM4zRxrjFRUfkH29YYfRe; upgrade → retention 4h rev2; `helm rollback` rev1 → retention 2h; redo upgrade → 4h; dashboards Kubelet/Networking readable; node load ~72% mem on 8GB during pull.
 
 ## Day 67-69 — Storage + TLS
 
