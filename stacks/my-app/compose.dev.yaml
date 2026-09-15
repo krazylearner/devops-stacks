@@ -1,0 +1,4 @@
+# Dev override: my-app-dev on :8089 (spec 8081 taken by my-web)
+services:
+  app:
+    container_name: my-app-dev

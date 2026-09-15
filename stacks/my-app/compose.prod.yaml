@@ -1,0 +1,4 @@
+# Prod override: my-app-prod on :8092 (spec 8082 taken by whoami)
+services:
+  app:
+    container_name: my-app-prod

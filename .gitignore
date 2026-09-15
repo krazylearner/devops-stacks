@@ -9,3 +9,6 @@ backup-wp-*.tgz
 .env
 stacks/*/.env
 *.env
+# Day43 dev/prod real envs (examples committed)
+stacks/*/.env.dev
+stacks/*/.env.prod

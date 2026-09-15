@@ -26,10 +26,11 @@
 
 ## Day 43-45 — Dev/Prod envs
 
-- [ ] Duplicate `my-app-dev:8081` / `my-app-prod:8082`, `.env.dev/.env.prod`, secrets via Portainer override only
+- [x] Duplicate `my-app-dev:8081` / `my-app-prod:8082`, `.env.dev/.env.prod`, secrets via Portainer override only
+  - Ports shifted to `:8089/:8092` (spec 8081/8082 taken by my-web/whoami), isolated projects `-p my-app-dev/prod`, `${HOST_PORT}/${CONTAINER_NAME}` + `.env.*.example`, Portainer env override only
 
 !!! success "✅ Validation"
-    Dev breaks, prod stays. Notes: ___
+    Dev breaks, prod stays. Notes: dev :8089 dev/dev-local + prod :8092 prod/prod-stable both 200, bad TAG pull fails safe, `stop my-app-dev` -> dev 000 FAIL prod 200 stays, start recovers (2026-09-15).
 
 ## Day 46-48 — Rollback drill
 
