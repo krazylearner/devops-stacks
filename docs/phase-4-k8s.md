@@ -2,18 +2,18 @@
 
 ## Day 53-55 — k3s + Portainer env
 
-- [ ] `curl -sfL https://get.k3s.io | sh -` + `kubectl get nodes`
-- [ ] Add K8s env in Portainer via `/etc/rancher/k3s/k3s.yaml`
+- [x] `curl -sfL https://get.k3s.io | sh -` + `kubectl get nodes`
+- [x] Add K8s env in Portainer via Portainer Agent (agent LB :9001)
 
 !!! success "✅ Validation"
-    K8s visible in Portainer + kubectl. Notes: ___
+    K8s visible in Portainer + kubectl. Notes: Ready v1.36.4+k3s1; agent skaffold endpoint `k3s` (id 5, type 6); traefik svc switched LB→NodePort (hostPorts 80/443 freed for Caddy); agent manifest ce2-45 lb (portainer ns, SA clusteradmin).
 
 ## Day 56-58 — First manifests
 
-- [ ] `k8s-manifests/whoami/{ns,deploy(2 repl),svc,ingress}.yaml` via Portainer Manifest + `kubectl scale 2→3`
+- [x] `k8s-manifests/whoami/{ns,deploy(2 repl),svc,ingress}.yaml` via Portainer Manifest + `kubectl scale 2→3`
 
 !!! success "✅ Validation"
-    Both scale paths work. Notes: ___
+    Both scale paths work. Notes: deployed via kubeconfig (manifests git-hosted); ingress via traefik NodePort :32432; scale 2→3 both pods Serving; round-robin across replicas via ingress.
 
 ## Day 59-62 — Project 7: Prod-grade nginx
 
