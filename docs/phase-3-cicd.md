@@ -34,10 +34,10 @@
 
 ## Day 46-48 — Rollback drill
 
-- [ ] Break build intentionally → redeploy `prev-stable` via Custom Template → write `runbooks/rollback.md`
+- [x] Break build intentionally → redeploy `prev-stable` via Custom Template → write `runbooks/rollback.md`
 
 !!! success "✅ Validation"
-    Rollback <5min. Notes: ___
+    Rollback <5min. Notes: prev-stable 3ecddb0 prod-stable :8092, bad TAG safe 4s old stays, stop outage -> up recovery 15s curl prod-stable 200, runbook CLI+Template+webhook (2026-09-15).
 
 ## Day 49-52 — Custom Templates (IDP-lite)
 
