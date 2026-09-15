@@ -41,7 +41,7 @@
 
 ## Day 49-52 — Custom Templates (IDP-lite)
 
-- [ ] Portainer Settings → App Templates → custom JSON for `my-app`, one-click deploy test in incognito
+- [x] Portainer Settings → App Templates → custom JSON for `my-app`, one-click deploy test in incognito
 
 !!! success "✅ Validation"
-    Junior can deploy w/o CLI. Notes: ___
+    Junior can deploy w/o CLI. Notes: `templates/templates.json` (v2 format, type-2, repository.stackfile) pushed (1baf471+3ccf7e1), Settings.TemplatesURL=raw URL → /api/templates lists both `my-app` + `my-app prev-stable (rollback)`. Deploys: stack `my-app` :8088 healthy {"sha":"template"}, junior user (non-admin, env access RoleId=1, separate session = incognito-equivalent) one-click deployed `my-app-rollback` :8093 healthy {"sha":"prod-stable"} TAG=d1d810a via template preset env (2026-09-15, via localhost:9443 API; true UI incognito optional).

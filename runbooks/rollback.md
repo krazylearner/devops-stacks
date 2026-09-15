@@ -19,6 +19,7 @@ sleep 3; curl -s http://127.0.0.1:8092/
 ## Portainer Custom Template (IDP-lite, no CLI)
 - Custom Templates → Add: name `my-app-prev-stable`, repo `https://github.com/krazylearner/devops-stacks.git`, compose path `stacks/my-app/compose.yaml`
 - Env preset: `TAG=d1d810a, APP_VERSION=prod, GIT_SHA=prod-stable, CONTAINER_NAME=my-app-prod, HOST_PORT=8092`
+- **Day 49-52 proven (2026-09-15)**: `templates/templates.json` (Settings→Custom Templates→URL=raw.githubusercontent raw URL, pushed main 3ccf7e1) — template `my-app prev-stable (rollback)` one-click deployed by non-admin user `junior` → stack `my-app-rollback` :8093 healthy `{"sha":"prod-stable"}` TAG=d1d810a, 5s. Junior has env access RoleId=1 only; delete/re-pwd `junior` post-drill if done.
 - Stacks → my-app-prod → Update → select template version → Rollback → verify :8092 200
 
 ## Webhook emergency (no UI login)
